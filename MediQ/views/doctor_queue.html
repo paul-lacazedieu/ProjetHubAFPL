@@ -1,0 +1,16 @@
+@{title('Attente docteur')}
+
+<h1 class="center">
+	Attente Docteur
+</h1>
+
+<h1 class="center"><b><div id="waiters"></div></b></h1>
+
+
+<p id="viewers" class="center"></p>
+
+<script type="text/javascript">
+	var doctor = @{model.doctor}
+</script>
+
+@{place('javascripts', '/js/doctor_queue.js')}

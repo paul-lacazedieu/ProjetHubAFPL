@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=11" />
+	<meta name="format-detection" content="telephone=no" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta name="robots" content="all,follow" />
+	<link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	@{import('meta', 'head', 'default.css', 'utils.css', 'materialize.min.css', 'favicon.ico')}
+</head>
+<body class="fullscreen">
+	<div class="full flex flex-direction-column">
+
+		<nav class="light-green lighten-2">
+	    <div class="nav-wrapper">
+	      <a href="/" class="brand-logo">MediQ</a>
+	      <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+	      <ul class="right hide-on-med-and-down">
+					<li><a href="/">Accueil</a></li>
+					<li><a href="/search">Recherche</a></li>
+	      </ul>
+	      <ul class="side-nav" id="mobile-demo">
+					<li><a href="/">Accueil</a></li>
+					<li><a href="/search">Recherche</a></li>
+					<li><a href="/doctor">Docteur</a></li>
+					<li><a href="/doctor/infos">Infos docteur</a></li>
+					<li><a href="/doctor/queue">Attente docteur</a></li>
+	      </ul>
+	    </div>
+	  </nav>
+
+		<div class="flex-1 flex flex-direction-column">
+			@{body}
+		</div>
+
+		<footer class="page-footer light-green lighten-2">
+			<div class="container">
+				<div class="row">
+					<div class="col l6 s12">
+						<h5 class="white-text">MediQ</h5>
+						<p class="grey-text text-lighten-4">Contenu du footer de MediQ</p>
+					</div>
+					<div class="col l4 offset-l2 s12">
+						<h5 class="white-text">Les liens</h5>
+						<ul>
+							<li><a class="grey-text text-lighten-3" href="/">Accueil</a></li>
+							<li><a class="grey-text text-lighten-3" href="/search">Recherche</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="footer-copyright">
+				<div class="container">
+					Copyright (c) 2016 Copyright MediQ All Rights Reserved.
+				<a class="grey-text text-lighten-4 right" href="#!">Plus de liens</a>
+				</div>
+			</div>
+		</footer>
+
+	</div>
+	@{import('https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js', 'materialize.min.js', 'default.js')}
+	@{place('javascripts')}
+</body>
+</html>

@@ -1,0 +1,28 @@
+@{title('Recherche')}
+
+<h1 class="center">
+	Recherche
+</h1>
+<p class="center">Trouver votre médecin:</p>
+<div class="full-width">
+	<div class="row">
+		<div class="col s3"></div>
+		<div class="col s6">
+			<div class="row">
+				<div class="input-field col s5">
+					<input placeholder="Jean Savet" id="doctor_name" type="text" class="validate">
+					<label for="doctor_name">Nom médecin</label>
+				</div>
+				<div class="input-field col s5">
+					<input placeholder="Graulhet" id="doctor_city" type="text" class="validate">
+					<label for="doctor_city">Ville</label>
+				</div>
+				<div class="input-field col s2">
+					<button id="search" class="waves-effect waves-light btn light-green lighten-2">Rechercher</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+@{place('javascripts', '/js/doctor_search.js')}
