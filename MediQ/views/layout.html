@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html class="full flex flex-direction-column">
 <head>
 	<meta charset="utf-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=11" />
@@ -7,12 +7,12 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta name="robots" content="all,follow" />
 	<link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-	@{import('meta', 'head', 'default.css', 'utils.css', 'materialize.min.css', 'favicon.ico')}
+	@{import('meta', 'head', 'materialize.min.css', 'default.css', 'utils.css', 'favicon.ico')}
 </head>
-<body class="fullscreen">
+<body class="flex-1">
 	<div class="full flex flex-direction-column">
 
-		<nav class="light-green lighten-2">
+		<nav class="blue lighten-1">
 	    <div class="nav-wrapper">
 	      <a href="/" class="brand-logo">MediQ</a>
 	      <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
@@ -34,7 +34,7 @@
 			@{body}
 		</div>
 
-		<footer class="page-footer light-green lighten-2">
+		<footer class="page-footer blue lighten-1">
 			<div class="container">
 				<div class="row">
 					<div class="col l6 s12">

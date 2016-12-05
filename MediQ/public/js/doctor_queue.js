@@ -1,6 +1,16 @@
 $(document).ready(function(){
 
-  ws = new WebSocket('ws://127.0.0.1:8000/doctor/'+doctor+'/queue');
+  var ws = new WebSocket('ws://127.0.0.1:8000/doctor/'+doctor+'/queue');
+  var green = {
+    r: 174,
+    g: 213,
+    b: 129
+  };
+  red = {
+    r: 255,
+    g: 26,
+    b: 26
+  };
 
   ws.onopen = function() {
   };
@@ -17,18 +27,15 @@ $(document).ready(function(){
   };
 
   function colorize(waiters){
-    if (waiters > 6) {
-      waiters = 6;
-    }
-    else if (waiters < 0) {
-        waiters = 0;
-    }
-    waiters = waiters * 100 / 6;
-    var r = Math.floor((255 * waiters) / 100),
-        g = Math.floor((255 * (100 - waiters)) / 100),
-        b = 0;
+    waiters = (waiters > 10 ? 10 : (waiters < 0 ? 0 : waiters));
+    percent = waiters / 10;
+    var color = {
+      r: Math.floor(green.r + percent * (red.r - green.r)),
+      g: Math.floor(green.g + percent * (red.g - green.g)),
+      b: Math.floor(green.b + percent * (red.b - green.b)),
+    };
     $("#waiters").css({
-        backgroundColor: "rgb(" + r + "," + g + "," + b + ")"
+        backgroundColor: "rgb(" + color.r + "," + color.g + "," + color.b + ")"
     });
   }
 });
