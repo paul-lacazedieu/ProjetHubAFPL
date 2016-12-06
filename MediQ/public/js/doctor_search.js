@@ -1,3 +1,3 @@
 $(document).ready(function(){
-  console.log('DOCTOR SEARCH JS');
+  console.log("DOCTOR SEARCH JS");
 });

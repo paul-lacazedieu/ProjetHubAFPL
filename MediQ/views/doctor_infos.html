@@ -4,4 +4,10 @@
 <h1 class="center">
 	Informations Docteur
 </h1>
-<p class="center">@{model.id} -> @{model.firstname} @{model.lastname}</p>
+<div class="container">
+	@{if model.error !== null }
+	<p class="center">@{model.error.message}</p>
+	@{else}
+	@{view('doctor/item', {doctor: model.doctor, link: false})}
+	@{fi}
+</div>

@@ -16,7 +16,22 @@ function view_index() {
 
 function view_search() {
 	var self = this;
-	self.view('search');
+	self.view('search', {
+		results: [
+			{
+				firstname: 'Paul',
+				lastname: 'Lacazedieu',
+				address: '54 bis rue de Bérénice, 81300 Graulhet',
+				link: '/doctor/0/infos'
+			},
+			{
+				firstname: 'Adrien',
+				lastname: 'Fildier',
+				address: '12 avenue de Gau, 81500 Caussades',
+				link: '/doctor/1/infos'
+			},
+		]
+	});
 }
 
 function view_doctor() {
@@ -44,5 +59,28 @@ function doctor_queue_socket(id) {
 
 function view_doctor_infos(id) {
 	var self = this;
-	self.view('doctor_infos', {id: id, firstname: "Jean", lastname: "Jacques"});
+	var err = null;
+	var doc = null;
+	var doctors = [
+		{
+			firstname: 'Paul',
+			lastname: 'Lacazedieu',
+			address: '54 bis rue de Bérénice, 81300 Graulhet',
+			link: '/doctor/0/infos'
+		},
+		{
+			firstname: 'Adrien',
+			lastname: 'Fildier',
+			address: '12 avenue de Gau, 81500 Caussades',
+			link: '/doctor/1/infos'
+		},
+	];
+	if (id < doctors.length){
+		var doc = doctors[id];
+	} else {
+		err = {
+			message: "Aucun docteur pour l'id '"+id+"'."
+		}
+	}
+	self.view('doctor_infos', {doctor: doc, error: err});
 }

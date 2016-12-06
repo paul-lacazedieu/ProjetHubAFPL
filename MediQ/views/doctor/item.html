@@ -1,0 +1,12 @@
+<div class="flex flex-direction-row padding-5 relative">
+  <div class="flex-1">
+    <p><b>@{model.doctor.firstname} @{model.doctor.lastname}</b></p>
+    <p>@{model.doctor.address}</p>
+  </div>
+  <div class="flex flex-align-items-center">
+    <img class="responsive-img" src="http://placehold.it/50x50" alt="">
+  </div>
+  @{if model.link }
+  <a href="@{model.doctor.link}" class="btn-floating btn-large btn-flat waves-effect waves-light blue margin-left-10 flex-align-self-center hoverable"><i class="material-icons">chevron_right</i></a>
+  @{fi}
+</div>

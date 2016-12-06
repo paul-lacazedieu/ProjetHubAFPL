@@ -1,28 +1,43 @@
 @{title('Recherche')}
 
 <h1 class="center">
-	Recherche
+	Trouver votre médecin:
 </h1>
-<p class="center">Trouver votre médecin:</p>
-<div class="full-width">
-	<div class="row">
-		<div class="col s3"></div>
-		<div class="col s6">
-			<div class="row">
-				<div class="input-field col s5">
-					<input placeholder="Jean Savet" id="doctor_name" type="text" class="validate">
-					<label for="doctor_name">Nom médecin</label>
-				</div>
-				<div class="input-field col s5">
-					<input placeholder="Graulhet" id="doctor_city" type="text" class="validate">
-					<label for="doctor_city">Ville</label>
-				</div>
-				<div class="input-field col s2">
-					<button id="search" class="waves-effect waves-light btn blue lighten-1">Rechercher</a>
-				</div>
-			</div>
+
+<div class="container margin-bottom-10">
+	<div class="full-width flex flex-direction-column flex-direction-row-m flex-justify-content-space-around">
+		<div class="input-field flex-1 margin-right-10">
+			<input id="doctor_name" type="text" class="validate">
+			<label for="doctor_name">Nom médecin</label>
+		</div>
+		<div class="input-field flex-1 margin-right-10">
+			<input id="doctor_city" type="text" class="validate">
+			<label for="doctor_city">Ville</label>
+		</div>
+		<div class="input-field">
+			<button id="search" class="full-width waves-effect waves-light btn blue lighten-1">Rechercher</a>
 		</div>
 	</div>
+
+  <h3 class="center">Résultats:</h3>
+  <div class="row">
+    <div class="col s0 m1 l3">
+    </div>
+    <div id="result-list" class="col s12 m10 l6" style="max-height: 90vh; overflow: auto;">
+
+      @{if model && model.results !== null}
+
+      @{foreach doc in model.results}
+      @{view('doctor/item', {doctor: doc, link: true})}
+      @{if index < model.results.length - 1}
+      <hr>
+      @{fi}
+      @{end}
+
+      @{fi}
+
+  	</div>
+  </div>
 </div>
 
 @{place('javascripts', '/js/doctor_search.js')}
